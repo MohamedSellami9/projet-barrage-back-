@@ -82,7 +82,10 @@ const getBarragesbytime = async (req, res) => {
     }
     res.json(Barrages);
 }
-
+const addBarragesIndex = async (req,res) => {
+       const Barrages =Barrage.index({valeur : 1});
+       res.json(Barrages);
+}
 module.exports = {
     createNewBarrage,
     updateBarrage,
@@ -91,5 +94,6 @@ module.exports = {
     getBarragesbytime,
     getAlldates,
     getAllBarrages,
-    getAllBarrageNames
+    getAllBarrageNames,
+    addBarragesIndex
 }

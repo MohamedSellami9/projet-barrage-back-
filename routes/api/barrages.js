@@ -18,5 +18,6 @@ router.route("/datee")
     .get(barragesController.getAlldates);
 router.route("/names")
     .get(barragesController.getAllBarrageNames);
-    
+router.route("/index")
+    .put(barragesController.addBarragesIndex);
 module.exports = router;
