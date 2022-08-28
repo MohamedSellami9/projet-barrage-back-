@@ -7,88 +7,102 @@ const barrageSchema = new Schema({
         required: true
     },
     Nom_Ar: { 
-        type: String,
-        required: true
+        type: String
     },
     apports: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     id_barrage: {
        type: Number,
-       required: true
+       
+
     },
     lachers: {
         type: Number,
-        required: true
+        required: true,
+        default:0
     },
     stock: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     cumul_mensuel_apports: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     cumul_annuel_apports: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     cumul_mensuel_lachers: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     cumul_annuel_lachers: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     moy_mois: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     cumul_annee_prec: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     moy_periode: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     stock_annee_prec: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     Cap_tot_act: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     Cote: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     Cap_tot_init: {
        type: Number,
-       required: true
+       required: true,
+       default:0
     },
     fonctionnel: {
        type: Number,
-       required: true
+       required: true,
+       default:1
     },
     Annee_prod: {
-       type: Number,
-       required: true
+       type: Number
     },
     Latitude: {
        type: Number,
-       required: true
+       
     },
     Longitude: {
        type: Number,
-       required: true
+ 
     },
     Bassin_versant: {
        type: Number,
-       required: true
+    
     },
     Date: {
        type: String,

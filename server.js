@@ -45,9 +45,10 @@ app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/refresh', require('./routes/refresh'));
 app.use('/logout', require('./routes/logout'));
-app.use('/barrages', require('./routes/api/barrages'));
-//app.use(verifyJWT);
+app.use('/getbarrages', require('./routes/getBarrages'));
 
+//app.use(verifyJWT);
+app.use('/barrages', require('./routes/api/barrages'));
 app.use('/users', require('./routes/api/users'));
 app.use('/roles', require('./routes/roles'));
 
