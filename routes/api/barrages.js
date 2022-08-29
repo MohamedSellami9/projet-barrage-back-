@@ -7,6 +7,8 @@ const verifyRoles = require('../../middleware/verifyRoles');
 router.route('/')
     .post( barragesController.createNewBarrage)
     .put( barragesController.updateBarrage)
+
+router.route('/:Nom_Fr&:Date')    
     .delete( barragesController.deleteBarrage);
 
 

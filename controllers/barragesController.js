@@ -65,14 +65,17 @@ const updateBarrage = async (req, res) => {
 }
 
 const deleteBarrage = async (req, res) => {
-    const barrage = await Barrage.findOne({Nom_Fr: req.body.Nom_Fr,
-                                            Date:req.body.Date }).exec();
+    const barrage = await Barrage.findOne({Nom_Fr: req.params.Nom_Fr,
+                                            Date:req.params.Date }).exec();
     if (!barrage) {
-        return res.status(204).json({ "message": `No Barrage matches ID ${req.body.Date}.` });
-    }
-    const result = await barrage.deleteOne({Nom_Fr: req.body.Nom_Fr,
-        Date:req.body.Date }); 
+      return res.status(204).json({ 'message': `barrage not found` });
+        }
+
+
+    const result = await Barrage.deleteOne({Nom_Fr: req.params.Nom_Fr,
+        Date:req.params.Date }); 
     res.json(result);
+    
 }
 
 const getBarragesbyname = async (req, res) => {
@@ -95,8 +98,12 @@ const getBarragesbytime = async (req, res) => {
     res.json(Barrages);
 }
 const addBarragesIndex = async (req,res) => {
-       const Barrages =Barrage.createIndexes({"valeur" : 1});
-       res.json(Barrages);
+    const barrage = await Barrage.findOne({Date: '2022-01-04 00:00:00',Nom_Fr: 'abid'})
+   await Barrage.createIndexes({'valeur' : 1});
+        barrage.valeur= 69;
+        const result = await barrage.save();
+       
+       res.json(result);
 }
 module.exports = {
     createNewBarrage,
